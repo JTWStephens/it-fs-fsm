@@ -178,8 +178,8 @@ public class FSMInvocationHandler implements InvocationHandler {
                     throw new RuntimeException("Activity '" + activityName + "' not executable (IllegalArgumentException): " + nsme.
                             getMessage());
                 } catch (java.lang.reflect.InvocationTargetException nsme) {
-                    throw new RuntimeException("Activity '" + activityName + "' not executable (InvocationTargetException): " + nsme.
-                            getMessage());
+                    throw new RuntimeException("Activity '" + activityName + "' has generated an exception: " + nsme.
+                            getCause());
                 }
             } else {
                 throw new RuntimeException("Activity '" + activityName + "' not available in the state: " + ex.
